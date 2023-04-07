@@ -1,10 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-interface BotonBio {
+export interface Bio {
   isActive?: boolean;
+  
 }
 
-export const Boton = styled.button<BotonBio>`       
+export const Boton = styled.button<Bio>`       
   border-radius: 5px;
   border: 1px solid darkgray;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
@@ -15,12 +16,15 @@ export const Boton = styled.button<BotonBio>`
   &:hover {
     cursor: pointer;
   }
-  background-color: ${({isActive}) => isActive ? "red": ""};
-  color: ${({isActive}) => isActive ? "whitesmoke" : ""};
-  text-shadow: ${({isActive}) => isActive ? "2px 2px 0 #000000,2px -2px 0 #000000,-2px 2px 0 #000000,-2px -2px 0 #000000,2px 0px 0 #000000, 0px 2px 0 #000000,-2px 0px 0 #000000, 0px -2px 0 #000000" : "" };
+  
+  background-color: ${({isActive}) => isActive ? "red": null};
+  color: ${({isActive}) => isActive ? "whitesmoke" : null};
+  text-shadow: ${({isActive}) => isActive ? "2px 2px 0 #000000,2px -2px 0 #000000,-2px 2px 0 #000000,-2px -2px 0 #000000,2px 0px 0 #000000, 0px 2px 0 #000000,-2px 0px 0 #000000, 0px -2px 0 #000000" : null };
+ 
+  
+
+  
   `;
-
-
 
 export const Descripcion = styled.p`
 font-size: 1.3em;
@@ -35,10 +39,9 @@ max-width: 200px;
 `;
 
 export const Nombre = styled.h3`
-font-size: 2em;
-margin-bottom: 1rem;
+  font-size: 2em;
+  margin-bottom: 1rem;
 `;
-
 export const ContenedorBotones = styled.div`
   display: flex;
   flex-direction: row;
